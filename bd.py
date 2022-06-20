@@ -27,9 +27,10 @@ def inserir (tipo,nome,telefone):
 
 # CODIGO 0 nome 1 telefone 2
 
-contatos = []
+
 
 def consultar(tipo):
+    contatos = []
     if tipo == 1 :
         for linha in cur.execute("select * from agenda"):
             #print(linha)

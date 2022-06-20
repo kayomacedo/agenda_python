@@ -26,17 +26,24 @@ class Funcs():
 
 
 
+
         if self.nome != "" and self.telefone != "":
        
             inserir( True,f'{self.nome}',f'{self.telefone}')
 
     def ver_dados(self):
         self.dados_conts = consultar(True)
+        
+
+            
+            
+
+        
 
     def tela2(self):
         self.ver_dados()
         self.root2 = Toplevel()
-        
+        #self.root2.attributes("-topmost", True)
 
         
 
@@ -76,10 +83,27 @@ class Funcs():
 
         # Preenchendo
 
+        #print(len(self.dados_conts))
+
+        
+
 
         for contact in self.dados_conts:
             self.listaCli.insert('', END, values=contact)
             contact =''
+            
+
+            
+        
+
+
+
+    def limpando_tree (self):
+        
+        for i in self.listaCli.get_children():
+            self.listaCli.delete(i)
+            root.update()
+
 
 
 
